@@ -582,17 +582,19 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
         <p class="lede">Most electrical problems on a build are not electrical. They are a
           crew that did not show, a rough-in nobody photographed, and a question that took
           three days to get answered.</p>
-        <ul class="ticks" data-todo="confirm these builder promises">
+        <ul class="ticks">
           <li><span class="k">01</span><span class="v"><b>We hold the date</b>
             Rough-in and trim are booked against your schedule, and you hear from us before
             the date moves, not after.</span></li>
-          <li><span class="k">02</span><span class="v"><b>Everything is photographed before it is covered</b>
-            Every rough-in is shot and filed against the lot before drywall, so what is behind
-            the wall is never a guess later.</span></li>
+          <li><span class="k">02</span><span class="v"><b>Photos of the rough-in when you need them</b>
+            Rough-ins are photographed and filed against the lot before drywall. If a question
+            comes up later about what is behind a wall, ask and we will send you the picture.</span></li>
           <li><span class="k">03</span><span class="v"><b>One number, one answer</b>
             You are not routed through an office. You ask the person who did the work.</span></li>
-          <li><span class="k">04</span><span class="v"><b>Inspections are ours to carry</b>
-            We handle the walk, and any correction on our work is put right on our time.</span></li>
+          <li><span class="k">04</span><span class="v"><b>We stand behind our own work at inspection</b>
+            Plenty of jurisdictions require you or the homeowner to pull the permit rather than
+            us. Whoever holds it, we meet the inspector on our work, and any correction on it is
+            put right on our time.</span></li>
         </ul>
       </div>
       <div class="ph ph-b" role="img" aria-label="Rough-in wiring in a new build"></div>
@@ -756,8 +758,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false"><span class="q">Do you pull the permit and handle inspection?</span><span class="pm"></span></button>
-        <div class="a"><p>On work that needs one, yes. We pull it, we meet the inspector, and if
-          anything on our work needs correcting we put it right on our time, not yours.</p></div>
+        <div class="a"><p>It depends on the jurisdiction. A good many require the homeowner or
+          the general contractor to pull the permit themselves, and where that is the case we
+          will tell you up front and talk you through what they will want. Where we can pull it,
+          we do. Either way we meet the inspector on our work, and anything on our work that
+          needs correcting is put right on our time, not yours.</p></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false"><span class="q">Do you take on builders as ongoing work?</span><span class="pm"></span></button>
@@ -1113,14 +1118,34 @@ window.FELOG=function(){};
   try{ wanted = localStorage.getItem('fe-music')!=='off' }catch(e){}
 
   function setVol(v){ try{ el.volume=Math.max(0,Math.min(1,v)) }catch(e){} }
+  /* The deadline is not a nicety. iOS ignores element.volume completely, so el.volume
+     never moves, the convergence test is never satisfied, and without a deadline this
+     interval spins for ever and done() is never called. That is exactly how "Sound off"
+     came to leave the music playing on Andrew's iPhone: the only pause() lived in the
+     done callback of this fade. done() must ALWAYS run. */
   function fadeTo(target,done){
     clearInterval(fadeTimer);
+    var deadline=Date.now()+1200, fired=false;
+    function finish(){ if(fired) return; fired=true; clearInterval(fadeTimer); if(done) done(); }
     fadeTimer=setInterval(function(){
       var v=el.volume, step=0.04;
-      if(Math.abs(v-target)<=step){ setVol(target); clearInterval(fadeTimer); if(done) done(); }
-      else setVol(v<target ? v+step : v-step);
+      if(Math.abs(v-target)<=step){ setVol(target); finish(); return; }
+      if(Date.now()>deadline){ finish(); return; }   /* volume is not settable here */
+      setVol(v<target ? v+step : v-step);
     },40);
   }
+
+  /* Is element.volume actually honoured? Desktop yes, iOS no. Asked once, because the
+     answer decides whether a fade is even possible. */
+  var volumeWorks=(function(){
+    try{
+      var before=el.volume, probe=(before>0.5?0.25:0.75);
+      el.volume=probe;
+      var moved=Math.abs(el.volume-probe)<0.01;
+      el.volume=before;
+      return moved;
+    }catch(e){ return false }
+  })();
 
   function paint(){
     var inviting = wanted && !playing;
@@ -1245,6 +1270,9 @@ window.FELOG=function(){};
 
   function silence(){
     playing=false; paint();
+    /* Where volume is ignored there is nothing to fade, and pretending otherwise is
+       what left the track running. Stop it outright and stop it now. */
+    if(!volumeWorks){ clearInterval(fadeTimer); el.pause(); return; }
     fadeTo(0,function(){ el.pause() });
   }
 
