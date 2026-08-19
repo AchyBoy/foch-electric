@@ -1,0 +1,3 @@
+# Link only until the open items in ?review=1 are confirmed.
+User-agent: *
+Disallow: /
