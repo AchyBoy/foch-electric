@@ -1,6 +1,6 @@
-# Foch Electric
+# Foch An Electrical Co.
 
-Website for Foch Electric, licensed electrical contractor (licence 55468).
+Website for Foch An Electrical Co., licensed electrical contractor (licence 55468).
 
 Single hand written `index.html`, no build step. Edit it and push, GitHub Pages
 redeploys in about 90 seconds.

@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Stays until the open items (grep data-todo) are confirmed. Remove to go public. -->
 <meta name="robots" content="noindex, nofollow">
-<title>Foch Electric — Licensed Electrical Contractor</title>
+<title>Foch An Electrical Co. — Licensed Electrical Contractor</title>
 <meta name="description" content="Licensed electrical contractor. New construction, service upgrades, panels, remodels and EV chargers for builders and homeowners.">
-<meta property="og:title" content="Foch Electric — Licensed Electrical Contractor">
+<meta property="og:title" content="Foch An Electrical Co. — Licensed Electrical Contractor">
 <meta property="og:description" content="New construction, service upgrades, panels, remodels and EV chargers. Licence 55468.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0b0f14">
@@ -98,10 +98,20 @@ em.it{font-style:normal;color:var(--acc);font-weight:700}
 .hdr .row{display:flex;align-items:center;justify-content:space-between;gap:30px}
 .brand{display:flex;align-items:center;gap:13px;flex:none}
 .brand svg{width:31px;height:31px;flex:none;overflow:visible}
-.brand .nm{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:19px;
-  letter-spacing:-.02em;line-height:1;text-transform:uppercase}
+.brand .nm{font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:18px;
+  letter-spacing:-.025em;line-height:1.05;text-transform:uppercase;white-space:nowrap}
 .brand .nm small{display:block;font-family:'JetBrains Mono',monospace;font-size:8.5px;
   letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+@media (max-width:520px){
+  .brand svg{width:26px;height:26px}
+  .brand{gap:10px}
+  /* Only down here is there not room for one line, and "FOCH AN / ELECTRICAL CO."
+     is a clean break. Above this it stays on a single line so "CO." is never orphaned. */
+  .brand .nm{font-size:14.5px;white-space:normal;max-width:11ch}
+  /* The name already ends in "Electrical Co." and the licence sits in the hero
+     chip just below, so this line only costs a fourth row in the lockup here. */
+  .brand .nm small{display:none}
+}
 .nav-links{display:flex;gap:34px;align-items:center}
 .nav-links a{font-size:13px;letter-spacing:.03em;color:var(--paper-dim);
   transition:color .3s;position:relative;padding:4px 0}
@@ -408,12 +418,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
 <!-- ============ HEADER ============ -->
 <header class="hdr" id="hdr">
   <div class="wrap row">
-    <a class="brand" href="#top" aria-label="Foch Electric, home">
+    <a class="brand" href="#top" aria-label="Foch An Electrical Co., home">
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <path d="M11 7h11M11 7v18M11 16h8" stroke="#2e8bff" stroke-width="2.2" fill="none" stroke-linecap="square"/>
         <circle cx="22" cy="7" r="2.5" fill="#6fd3ff"/>
       </svg>
-      <span class="nm">Foch Electric<small>Licensed contractor</small></span>
+      <span class="nm">Foch An Electrical Co.<small>Licensed contractor</small></span>
     </a>
     <nav class="nav-links" id="navlinks">
       <a href="#services">Services</a>
@@ -735,7 +745,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
     <div class="faq rv">
       <div class="qa">
         <button type="button" aria-expanded="false"><span class="q">Are you licensed?</span><span class="pm"></span></button>
-        <div class="a"><p>Yes. Foch Electric holds electrical contractor licence <b style="color:var(--acc-lt);font-weight:500">55468</b>.
+        <div class="a"><p>Yes. Foch An Electrical Co. holds electrical contractor licence <b style="color:var(--acc-lt);font-weight:500">55468</b>.
           We are happy to put it on any document you need it on.</p></div>
       </div>
       <div class="qa" data-todo="insurance: confirm carrier / limits before this goes public">
@@ -827,13 +837,13 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
         <path d="M11 7h11M11 7v18M11 16h8" stroke="#2e8bff" stroke-width="2.2" fill="none" stroke-linecap="square"/>
         <circle cx="22" cy="7" r="2.5" fill="#6fd3ff"/>
       </svg>
-      <span class="nm">Foch Electric<small>Lic. 55468</small></span>
+      <span class="nm">Foch An Electrical Co.<small>Lic. 55468</small></span>
     </a>
     <nav class="f-links">
       <a href="#services">Services</a><a href="#builders">Builders</a>
       <a href="#work">Work</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </nav>
-    <span class="mono">&copy; <span id="yr">2026</span> Foch Electric</span>
+    <span class="mono">&copy; <span id="yr">2026</span> Foch An Electrical Co.</span>
   </div>
 </footer>
 
