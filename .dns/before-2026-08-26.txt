@@ -1,0 +1,40 @@
+fochelc.com DNS at GoDaddy (dcc.secureserver.net), captured 2026-08-26
+BEFORE the GitHub Pages cutover. All TTLs 1 Hour.
+Registrar account is Google-generated (domain bought through Google Workspace 2018-06-08).
+
+A      @                      216.239.32.21          <- CHANGED to 185.199.108.153
+A      @                      216.239.34.21          <- CHANGED to 185.199.109.153
+A      @                      216.239.36.21          <- CHANGED to 185.199.110.153
+A      @                      216.239.38.21          <- CHANGED to 185.199.111.153
+NS     @                      ns27.domaincontrol.com.
+NS     @                      ns28.domaincontrol.com.
+CNAME  calendar               ghs.googlehosted.com.
+CNAME  docs                   ghs.googlehosted.com.
+CNAME  email.mail             mailgun.org.
+CNAME  sites                  ghs.googlehosted.com.
+CNAME  start                  ghs.googlehosted.com.
+CNAME  www                    ghs.googlehosted.com.  <- CHANGED to achyboy.github.io
+CNAME  _domainconnect         _domainconnect.ss.domaincontrol.com.
+SOA    @                      primary ns27.domaincontrol.com.
+MX     @                      aspmx.l.google.com. (1)
+MX     @                      alt1.aspmx.l.google.com. (5)
+MX     @                      alt2.aspmx.l.google.com. (5)
+MX     @                      aspmx2.googlemail.com. (10)
+MX     @                      aspmx3.googlemail.com. (10)
+MX     mail                   mxa.mailgun.org. (10)
+MX     mail                   mxb.mailgun.org. (10)
+TXT    @                      google-site-verification=E8nxzBrEsuIRF0Rku9bKrig9lWnoInAuVUJHgUAd9p4
+TXT    @                      v=spf1 include:_spf.google.com ?all
+TXT    mail                   v=spf1 include:mailgun.org ~all
+TXT    pic._domainkey.mail    k=rsa; p=MIIBIjANBgkq... (Mailgun DKIM, full value in git history of this file if ever needed)
+SRV    _jabber._tcp           20 0 5269 xmpp-server.1.1.google.com.
+SRV    _jabber._tcp           20 0 5269 xmpp-server.2.1.google.com.
+SRV    _xmpp-server._tcp      20 0 5269 xmpp-server1.1.google.com.
+SRV    _xmpp-server._tcp      20 0 5269 xmpp-server2.1.google.com.
+SRV    _xmpp-server._tcp      20 0 5269 xmpp-server3.1.google.com.
+SRV    _xmpp-server._tcp      20 0 5269 xmpp-server4.1.google.com.
+SRV    _xmpp-server._tcp      5 0 5269 xmpp-server.1.google.com.
+
+Untouched by the cutover: every MX (Google Workspace mail + Mailgun on mail.fochelc.com,
+which is JobHub's inbound office@mail.fochelc.com), both SPF TXT, the Mailgun DKIM,
+the Google site-verification TXT, NS, SOA and the SRV set.
