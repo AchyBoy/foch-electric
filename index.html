@@ -82,8 +82,8 @@ em.it{font-style:normal;color:var(--acc);font-weight:700}
 .ph::before{content:"";position:absolute;inset:0;z-index:0;transition:transform 1.1s var(--ease)}
 .ph::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(to top,rgba(8,12,17,.76) 0%,rgba(8,12,17,.10) 46%,rgba(8,12,17,.30) 100%)}
-.ph-a::before{background:linear-gradient(145deg,#242c35 0%,#414d5a 55%,#262e37 100%)}
-.ph-b::before{background:linear-gradient(160deg,#1b2733 0%,#2f4a63 55%,#1c2733 100%)}
+.ph-a::before{background:#242c35 url("photos/service-exterior.jpg") center 42%/cover no-repeat}
+.ph-b::before{background:#1b2733 url("photos/panel-directory.jpg") center/cover no-repeat}
 .ph-c::before{background:linear-gradient(135deg,#1d242b 0%,#374553 60%,#1e252c 100%)}
 .ph-d::before{background:linear-gradient(150deg,#1f2a36 0%,#3c5670 50%,#1d2733 100%)}
 .ph-e::before{background:linear-gradient(120deg,#212831 0%,#4a5865 58%,#222930 100%)}
@@ -278,6 +278,7 @@ section{position:relative;z-index:2}
   text-transform:uppercase;color:var(--muted)}
 .work .card.wide{grid-column:span 2}
 .work .card.wide .ph{aspect-ratio:16/9}
+.work .card.tall .ph{aspect-ratio:4/5}
 @media (max-width:1000px){.work{grid-template-columns:1fr 1fr}.work .card.wide{grid-column:span 2}}
 @media (max-width:680px){.work{grid-template-columns:1fr}.work .card.wide{grid-column:span 1}}
 
@@ -599,7 +600,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
             out your way.</span></li>
         </ul>
       </div>
-      <div class="ph ph-b" role="img" aria-label="Rough-in wiring in a new build"></div>
+      <div class="ph ph-b" role="img" aria-label="Finished panel with every circuit written up"></div>
     </div>
   </div>
 </section>
@@ -616,9 +617,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink
         twenty years. We build them to be read.</p></div>
     </div>
 
-    <div class="work rv" data-todo="replace with real projects + photos">
-      <article class="card wide">
-        <div class="ph ph-a" role="img" aria-label="Finished service panel"></div>
+    <div class="work rv" data-todo="4 of 6 slots still placeholder; ph-a and ph-b are stand-ins to be reshot">
+      <article class="card tall">
+        <div class="ph ph-a" role="img" aria-label="New 200A exterior service, meter, panel and riser"></div>
         <div class="bd">
           <span class="eyebrow">Service upgrade</span>
           <h3>200A service and a panel you can read</h3>
