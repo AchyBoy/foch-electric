@@ -147,6 +147,10 @@ launch `--headless=new --remote-debugging-port=9333`, connect with
 ## House style
 
 - **Commas, not dashes.** Plain everyday words. This is how Andrew writes and how the site reads.
+- **Say client, never homeowner.** Changed across the whole page on 2026-08-26 at his request, the
+  same word the JobHub app settled on. ⚠️ Two lines were drawing a line between the trade side and
+  the retail side ("for builders and homeowners"); a straight swap made them nonsense because a
+  builder is a client too, so they read **"for builders and private clients"**.
 - **Watch for phrasing that means cost but reads as scheduling.** "Put right on our time" was
   read as "whenever we get round to it", the exact opposite of the promise.
 - **Put promise wording in front of him rather than shipping it.** He will not sign off on
@@ -154,5 +158,11 @@ launch `--headless=new --remote-debugging-port=9333`, connect with
   rough-in photos are offered **on request**, and there is **no claim to pull the permit**.
 - **Nothing on the page is invented.** Where a fact was missing it became a `data-todo`
   marker, never a plausible number. Keep it that way.
+- 🔴 **No stock or manufacturer photography, ever.** On 2026-08-26 a Tesla Wall Connector image
+  was sent for the empty EV slot. It was Tesla's own product shot: square PNG, no camera EXIF,
+  studio lit and styled. It was declined and the slot left empty. Everything in Selected Work
+  reads as work Foch An Electrical Co. did, under a page carrying licence 55468, and it is not
+  Tesla's image to publish. **An empty slot beats a borrowed photo.** Tell-tales: a perfectly
+  square crop, no EXIF, and lighting no phone produces on a job site.
 - `data-todo` attributes are inert markers of what is still open.
   `grep -o 'data-todo="[^"]*"' index.html` recovers the list.
