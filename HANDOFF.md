@@ -158,11 +158,15 @@ launch `--headless=new --remote-debugging-port=9333`, connect with
   rough-in photos are offered **on request**, and there is **no claim to pull the permit**.
 - **Nothing on the page is invented.** Where a fact was missing it became a `data-todo`
   marker, never a plausible number. Keep it that way.
-- 🔴 **No stock or manufacturer photography, ever.** On 2026-08-26 a Tesla Wall Connector image
-  was sent for the empty EV slot. It was Tesla's own product shot: square PNG, no camera EXIF,
-  studio lit and styled. It was declined and the slot left empty. Everything in Selected Work
-  reads as work Foch An Electrical Co. did, under a page carrying licence 55468, and it is not
-  Tesla's image to publish. **An empty slot beats a borrowed photo.** Tell-tales: a perfectly
-  square crop, no EXIF, and lighting no phone produces on a job site.
+- **No stock or manufacturer photography.** Everything in Selected Work reads as work Foch An
+  Electrical Co. did, under a page carrying licence 55468. An empty slot beats a borrowed photo.
+- 🔴 **But do not read retouching as stock.** On 2026-08-26 the Tesla Wall Connector photo was
+  called out as manufacturer product photography and refused, on three tells: a perfect square
+  crop, **no camera EXIF**, and even studio-looking light. **All three were wrong.** It is
+  Andrew's own photo of a Level 2 Wall Connector **he installed at his own house**, and he had
+  run AI over it to take out personal items, which strips EXIF, re-crops and evens the light.
+  **Ask whose photo it is before concluding anything from metadata.** The absence of EXIF is
+  evidence of editing, not of origin. He is comfortable with AI cleanup of his own photos; the
+  line he agreed to is that it must not invent work that was not done.
 - `data-todo` attributes are inert markers of what is still open.
   `grep -o 'data-todo="[^"]*"' index.html` recovers the list.
