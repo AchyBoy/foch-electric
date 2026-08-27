@@ -36,8 +36,8 @@ Done:
 
 Open:
 
-1. **Four of the six photo slots are still gradient placeholders**, and the two that are
-   filled are stand-ins Andrew wants to reshoot. See "Photos" below.
+1. **Two of the six photo slots are still gradient placeholders** (`ph-d` kitchen, `ph-f` wide
+   handover), and two of the filled four are stand-ins Andrew wants to reshoot. See "Photos".
 2. There is **no `og:image`**, so links shared in a text or on Facebook have no picture.
 
 ## Photos
@@ -46,12 +46,16 @@ Six slots in `index.html`. Find them with `grep -n 'class="ph ph-' index.html`.
 
 | Class | Where | Crop | Status |
 |---|---|---|---|
-| `ph-a` | Work grid, lead card (`.card.tall`) | 4:5 | `photos/service-exterior.jpg` — stand-in |
-| `ph-b` | Builder-promises split section | 4:5 | `photos/panel-directory.jpg` — stand-in |
-| `ph-c` | Work card | 4:3 | placeholder gradient |
+| `ph-a` | Work grid, lead card (`.card.tall`) | 4:5 | `photos/service-exterior.jpg` — stand-in, reshoot |
+| `ph-b` | Builder-promises split section | 4:5 | `photos/panel-directory.jpg` — stand-in, reshoot |
+| `ph-c` | Work card (`.card.tall`) | 4:5 | `photos/temp-pole.jpg` — good, keep |
 | `ph-d` | Work card | 4:3 | placeholder gradient |
-| `ph-e` | Work card | 4:3 | placeholder gradient |
+| `ph-e` | Work card (`.card.tall`) | 4:5 | `photos/ev-charger.jpg` — good, keep |
 | `ph-f` | Work grid, wide card | 16:9 | placeholder gradient |
+
+⚠️ **Every real photo so far has arrived portrait or square, so the cards that hold them were
+turned portrait** with `.card.tall` (4:5). Only `ph-f` still needs a genuine landscape frame.
+Check a photo's shape before deciding which slot it fills, rather than the other way round.
 
 A photo is applied as a `background` on `.ph-X::before`, never as an `<img>`. That keeps the
 hover zoom on `::before` and the dark gradient scrim on `::after`.
@@ -62,9 +66,14 @@ hover zoom on `::before` and the dark gradient scrim on `::after`.
   (⚠️ that phase string has a trailing space), 15 items, which is what Andrew ticks in the field
 - the artifact at https://claude.ai/code/artifact/af459252-ec8a-4f41-a9f4-608f2a3a2f72
 
-⚠️ **Items 4 and 5 on that list are the two photos currently on the site.** They stay on the
-list on purpose. `ph-a` wants a landscape reshoot, `ph-b`'s source was shot with the phone
-rotated. Do not tick them off.
+⚠️ **The two panel shots stay on the list on purpose even though they are live.** `ph-a` wants
+a landscape reshoot and `ph-b`'s source was shot with the phone rotated. Do not tick them off.
+The EV charger and the temp pole are ticked.
+
+⭐ **The best photo so far was not on the list at all.** The temp pole has **FOCH marked on the
+lid in his own hand**, with the house going up behind it and his van in frame. Nothing on a
+competitor's site has that. When he sends something off-list, judge the photo, not the list,
+and add it to the list afterwards so the list matches reality.
 
 ### Getting photos out of JobHub
 
